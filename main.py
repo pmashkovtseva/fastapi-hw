@@ -45,11 +45,12 @@ def root():
 
 
 @app.post('/post', response_model=Timestamp, summary='Get Post')
-def get_post(timestamp_id: int) -> Timestamp:
+def get_post() -> Timestamp:
+    latest_timestamp = max(post_db, key=lambda item: item.id)
+    timestamp_id = latest_timestamp.id + 1
     timestamp_entry = Timestamp(id=timestamp_id, timestamp=int(time.time()))
-    for item in post_db:
-        if timestamp_id == item.id:
-            raise HTTPException(status_code=409, detail='Timestamp already exists')
+    if timestamp_entry in post_db:
+        raise HTTPException(status_code=409, detail='Timestamp already exists')
     post_db.append(timestamp_entry)
     return timestamp_entry
 
