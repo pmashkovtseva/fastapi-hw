@@ -4,4 +4,4 @@ This is the first DevOps homework assignment, made by me, [Polina Mashkovtseva](
 
 `main.py` file contains FlaskAPI app with several methods, extensively described [here](https://drive.google.com/file/d/1qtHEGCl2gpLxOR7CJPOC40tHp4hwYL5_/view).
 
-The app is also hosted on link.
+The app is also hosted on https://fastapi-hw-s89x.onrender.com.
