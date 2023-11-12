@@ -55,8 +55,12 @@ def get_post(timestamp_id: int) -> Timestamp:
 
 
 @app.get('/dog', response_model=dict, summary='Get Dogs')
-def get_dogs() -> dict:
-    return dogs_db
+def get_dogs(kind='') -> dict:
+    if kind == '':
+        return dogs_db
+    else:
+        dogs_by_kind = {pk: dog for pk, dog in dogs_db.items() if dog.kind == kind}
+        return dogs_by_kind
 
 
 @app.post('/dog', response_model=Dog, summary='Create Dog')
