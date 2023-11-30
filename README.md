@@ -6,4 +6,4 @@ This is the first DevOps homework assignment, made by me, [Polina Mashkovtseva](
 
 The app is also hosted on https://fastapi-hw-s89x.onrender.com.
 
-See [https://hub.docker.com/r/pmashkovtseva/fastapiimage](https://hub.docker.com/r/pmashkovtseva/fastapiimage) for Docker image.
+See https://hub.docker.com/r/pmashkovtseva/fastapiimage for Docker image.
